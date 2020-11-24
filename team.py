@@ -47,3 +47,12 @@ class Team:
       living_opponents.append(hero)
     
     while len(living_heroes) > 0 and len(living_opponents) > 0:
+      rand_hero = random.choice(living_heroes)
+      rand_opponent = random.choice(living_opponents)
+
+      rand_hero.fight(rand_opponent)
+
+      if rand_hero.is_alive() == True and rand_opponent.is_alive() == False:
+        living_opponents.remove(rand_opponent)
+      else:
+        living_heroes.remove(rand_hero)
