@@ -31,7 +31,7 @@ class Arena:
     hero_name = input("Hero's name: ")
     hero = Hero(hero_name)
     add_item = None
-    
+
     while add_item != "4":
         add_item = input("[1] Add ability\n[2] Add weapon\n[3] Add armor\n[4] Done adding items\n\nYour choice: ")
 
@@ -48,3 +48,15 @@ class Arena:
           hero.add_armor(new_armor)
 
     return hero
+
+  def build_team_one(self):
+    numOfTeamMembers = int(input("How many members would you like on Team One?\n"))
+    for i in range(numOfTeamMembers):
+        hero = self.create_hero()
+        self.team_one.add_hero(hero)
+
+  def build_team_two(self):
+    numOfTeamMembers = int(input("How many members would you like on Team Two?\n"))
+    for i in range(numOfTeamMembers):
+        hero = self.create_hero()
+        self.team_two.add_hero(hero)
