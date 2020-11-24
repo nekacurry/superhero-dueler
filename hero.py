@@ -17,6 +17,10 @@ class Hero:
   # ADD KILL METHOD 
   def add_kill(self, num_kills):
     self.kills += num_kills
+  
+  # ADD DEATH METHOD
+  def add_death(self, num_deaths):
+    self.deaths += num_deaths
     
   # ADD WEAPON METHOD
   def add_weapon(self, weapon):
