@@ -52,9 +52,16 @@ class Hero:
 
   # FIGHT METHOD
   def fight(self, opponent):
-    heroList = [self.name, opponent.name]
-    winner = random.choice(heroList)
-    print(winner + " wins!")
+    if len(self.abilities) <= 0 and len(opponent.abilities) <= 0:
+      print("It's a Draw!")
+    else:
+      while self.is_alive() and opponent.is_alive():
+        opponent.take_damage(self.attack())
+        self.take_damage(opponent.attack())
+      if self.is_alive() == False:
+        print(f"{opponent.name} wins!")
+      else:
+        print(f"{self.name} wins!")
 
 
 # TESTING
@@ -97,3 +104,19 @@ class Hero:
     print(hero.is_alive())
     hero.take_damage(15000)
     print(hero.is_alive()) '''
+
+if __name__ == "__main__":
+  # If you run this file from the terminal
+  # this block is executed.
+
+  hero1 = Hero("Wonder Woman")
+  hero2 = Hero("Dumbledore")
+  ability1 = Ability("Super Speed", 300)
+  ability2 = Ability("Super Eyes", 130)
+  ability3 = Ability("Wizard Wand", 80)
+  ability4 = Ability("Wizard Beard", 20)
+  hero1.add_ability(ability1)
+  hero1.add_ability(ability2)
+  hero2.add_ability(ability3)
+  hero2.add_ability(ability4)
+  hero1.fight(hero2)
