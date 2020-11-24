@@ -21,7 +21,7 @@ class Hero:
   # ADD DEATH METHOD
   def add_death(self, num_deaths):
     self.deaths += num_deaths
-    
+
   # ADD WEAPON METHOD
   def add_weapon(self, weapon):
     self.abilities.append(weapon)
@@ -74,11 +74,15 @@ class Hero:
         opponent.take_damage(self.attack())
         self.take_damage(opponent.attack())
       if self.is_alive() == False:
+        self.deaths += 1
+        opponent.kills += 1
         print(f"{opponent.name} wins!")
       else:
+        opponent.deaths += 1
+        self.kills += 1
         print(f"{self.name} wins!")
 
-
+        
 # TESTING
 ''' if __name__ == "__main__":
   hero1 = Hero("Grace Hopper")
