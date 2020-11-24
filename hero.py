@@ -42,6 +42,14 @@ class Hero:
     total_damage = damage - self.defend(damage)
     self.current_health -= total_damage
 
+  # IS ALIVE METHOD
+
+  def is_alive(self):
+    if self.current_health <= 0:
+      return False
+    else:
+      return True
+
   # FIGHT METHOD
   def fight(self, opponent):
     heroList = [self.name, opponent.name]
@@ -70,7 +78,7 @@ class Hero:
     hero.add_ability(another_ability)
     print(hero.attack()) '''
 
-if __name__ == "__main__":
+''' if __name__ == "__main__":
     # If you run this file from the terminal
     # this block of code is executed.
 
@@ -78,4 +86,14 @@ if __name__ == "__main__":
     shield = Armor("Shield", 50)
     hero.add_armor(shield)
     hero.take_damage(50)
-    print(hero.current_health)
+    print(hero.current_health) '''
+
+''' if __name__ == "__main__":
+    # If you run this file from the terminal
+    # this block is executed.
+
+    hero = Hero("Grace Hopper", 200)
+    hero.take_damage(150)
+    print(hero.is_alive())
+    hero.take_damage(15000)
+    print(hero.is_alive()) '''
