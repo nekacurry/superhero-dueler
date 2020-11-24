@@ -63,3 +63,40 @@ class Arena:
 
   def team_battle(self):
     self.team_one.attack(self.team_two)
+
+  def show_stats(self):
+    print("\n")
+    print(self.team_one.name + " statistics: ")
+    self.team_one.stats()
+    print("\n")
+    print(self.team_two.name + " statistics: ")
+    self.team_two.stats()
+    print("\n")
+
+    team_kills = 0
+    team_deaths = 0
+
+    for hero in self.team_one.heroes:
+        team_kills += hero.kills
+        team_deaths += hero.deaths
+    if team_deaths == 0:
+        team_deaths = 1
+    print(self.team_one.name + " average K/D was: " + str(team_kills/team_deaths))
+
+    for hero in self.team_two.heroes:
+        team_kills += hero.kills
+        team_deaths += hero.deaths
+    if team_deaths == 0:
+        team_deaths = 1
+    print(self.team_two.name + " average K/D was: " + str(team_kills/team_deaths))
+
+
+    # Here is a way to list the heroes from Team One that survived
+    for hero in self.team_one.heroes:
+        if hero.deaths == 0:
+            print("survived from " + self.team_one.name + ": " + hero.name)
+
+    #TODO: Now list the heroes from Team Two that survived
+    for hero in self.team_two.heroes:
+        if hero.deaths == 0:
+            print("survived from " + self.team_two.name + ": " + hero.name)
