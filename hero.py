@@ -1,3 +1,5 @@
+import random
+
 class Hero:
 
   def __init__(self, name, starting_health=100):
@@ -5,7 +7,17 @@ class Hero:
     self.starting_health = starting_health
     self.current_health = starting_health
 
+  def fight(self, opponent):
+    heroList = [self.name, opponent.name]
+    winner = random.choice(heroList)
+    print(winner + " wins!")
+
 if __name__ == "__main__":
-  my_hero = Hero("Grace Hopper", 200)
-  print(my_hero.name)
-  print(my_hero.current_health) 
+  hero1 = Hero("Grace Hopper")
+  hero2 = Hero("Dumbledore")
+
+  hero1.fight(hero2)
+
+
+
+
