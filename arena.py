@@ -8,3 +8,9 @@ class Arena:
   def __init__(self):
     self.team_one = None
     self.team_two = None
+
+  def create_ability(self):
+    name = input("What is the ability name?  ")
+    max_damage = input("What is the max damage of the ability?  ")
+
+    return Ability(name, max_damage)
