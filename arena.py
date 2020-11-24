@@ -60,3 +60,6 @@ class Arena:
     for i in range(numOfTeamMembers):
         hero = self.create_hero()
         self.team_two.add_hero(hero)
+
+  def team_battle(self):
+    self.team_one.attack(self.team_two)
