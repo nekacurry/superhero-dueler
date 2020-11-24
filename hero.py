@@ -1,5 +1,6 @@
 from ability import Ability
 from armor import Armor
+from weapon import Weapon
 import random
 
 class Hero:
@@ -10,6 +11,11 @@ class Hero:
     self.name = name
     self.starting_health = starting_health
     self.current_health = starting_health
+  
+  # ADD WEAPON METHOD
+
+  def add_weapon(self, weapon):
+    self.abilities.append(weapon)
 
   # ADD ABILITIES METHOD
   def add_ability(self, ability):
@@ -105,7 +111,7 @@ class Hero:
     hero.take_damage(15000)
     print(hero.is_alive()) '''
 
-if __name__ == "__main__":
+''' if __name__ == "__main__":
   # If you run this file from the terminal
   # this block is executed.
 
@@ -119,4 +125,12 @@ if __name__ == "__main__":
   hero1.add_ability(ability2)
   hero2.add_ability(ability3)
   hero2.add_ability(ability4)
-  hero1.fight(hero2)
+  hero1.fight(hero2) '''
+
+if __name__ == "__main__":
+    # If you run this file from the terminal
+    # this block is executed.
+  hero = Hero("Wonder Woman")
+  weapon = Weapon("Lasso of Truth", 90)
+  hero.add_weapon(weapon)
+  print(hero.attack())
