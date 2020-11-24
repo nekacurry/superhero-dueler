@@ -14,3 +14,9 @@ class Arena:
     max_damage = input("What is the max damage of the ability?  ")
 
     return Ability(name, max_damage)
+
+  def create_weapon(self):
+    name = input("What is the weapon name?  ")
+    max_damage = input("What is the max damage of the weapon?  ")
+
+    return Weapon(name, max_damage)
