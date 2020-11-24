@@ -11,6 +11,8 @@ class Hero:
     self.name = name
     self.starting_health = starting_health
     self.current_health = starting_health
+    self.deaths = 0
+    self.kills = 0
   
   # ADD WEAPON METHOD
 

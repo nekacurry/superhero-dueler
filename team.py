@@ -19,4 +19,4 @@ class Team:
       print(hero)
 
   def add_hero(self, hero):
-    
+    self.heroes.append(hero)
