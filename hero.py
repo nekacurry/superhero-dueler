@@ -82,7 +82,7 @@ class Hero:
         self.kills += 1
         print(f"{self.name} wins!")
 
-        
+
 # TESTING
 ''' if __name__ == "__main__":
   hero1 = Hero("Grace Hopper")
@@ -140,10 +140,10 @@ class Hero:
   hero2.add_ability(ability4)
   hero1.fight(hero2) '''
 
-if __name__ == "__main__":
+''' if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
   hero = Hero("Wonder Woman")
   weapon = Weapon("Lasso of Truth", 90)
   hero.add_weapon(weapon)
-  print(hero.attack())
+  print(hero.attack()) '''
